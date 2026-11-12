@@ -1,0 +1,1230 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101114">
+<title>AKM MASUM — Gaming Community</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #101114;
+  --surface: #17191d;
+  --panel: #1c1e23;
+  --text: #f5f2ed;
+  --muted: #a2a3a6;
+  --line: rgba(255,255,255,.10);
+  --accent: #ff593d;
+  --accent-light: #ff795f;
+  --green: #9de26c;
+  --display: "Barlow Condensed", sans-serif;
+  --body: "DM Sans", sans-serif;
+  --bangla: "Hind Siliguri", sans-serif;
+  --container: 1240px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+img { display: block; width: 100%; }
+
+button { font: inherit; cursor: pointer; }
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin: auto;
+}
+
+.bangla { font-family: var(--bangla); }
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.section { padding: 90px 0; }
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font: 800 clamp(38px, 5vw, 58px)/.95 var(--display);
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font: 13px/1.8 var(--bangla);
+  max-width: 380px;
+}
+
+.text-link {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* NAVIGATION */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(16,17,20,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font: 900 25px var(--display);
+  letter-spacing: 1px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #111;
+  font: 900 21px var(--display);
+  transform: skew(-8deg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+.nav-links a {
+  color: #c4c4c6;
+  font-size: 12px;
+  font-weight: 700;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  padding: 11px 18px;
+  background: var(--accent);
+  color: #111 !important;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #101114 0%, rgba(16,17,20,.92) 38%, rgba(16,17,20,.25) 100%),
+    linear-gradient(0deg, #101114 0%, transparent 40%),
+    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?q=85&w=2000&auto=format&fit=crop")
+    center / cover;
+}
+
+.hero::after {
+  content: "PLAY";
+  position: absolute;
+  right: -20px;
+  bottom: -105px;
+  font: 900 300px/.8 var(--display);
+  color: rgba(255,255,255,.035);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 720px;
+  position: relative;
+  z-index: 2;
+  padding: 100px 0;
+}
+
+.hero-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ddd;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.hero-label::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font: 900 clamp(70px, 10vw, 124px)/.82 var(--display);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.hero-description {
+  max-width: 490px;
+  margin-top: 25px;
+  color: #c6c6c8;
+  font: 15px/1.9 var(--bangla);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 23px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .8px;
+  transition: .2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #111;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* SAFETY NOTICE */
+
+.safety-wrap { padding-top: 28px; }
+
+.safety {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 23px 27px;
+  background: #211d1c;
+  border: 1px solid rgba(255,89,61,.3);
+}
+
+.safety-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #111;
+  font-size: 23px;
+  font-weight: 900;
+}
+
+.safety h3 {
+  font: 800 22px var(--display);
+  text-transform: uppercase;
+}
+
+.safety p {
+  margin-top: 3px;
+  color: #bdb5b1;
+  font: 12px/1.7 var(--bangla);
+}
+
+.safety a {
+  color: var(--accent-light);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* FEATURED STORIES */
+
+.featured { padding-bottom: 55px; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 22px;
+}
+
+.feature-main, .feature-small {
+  position: relative;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.feature-main { min-height: 445px; }
+
+.feature-main img,
+.feature-small img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.feature-main:hover img,
+.feature-small:hover img {
+  transform: scale(1.05);
+}
+
+.feature-main::after,
+.feature-small::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.9), transparent 75%);
+}
+
+.feature-caption {
+  position: absolute;
+  bottom: 27px;
+  left: 27px;
+  right: 27px;
+  z-index: 2;
+}
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background: var(--accent);
+  color: #111;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.feature-caption h3 {
+  margin: 12px 0 7px;
+  font: 800 clamp(32px, 4vw, 48px)/.95 var(--display);
+  text-transform: uppercase;
+}
+
+.feature-caption p {
+  color: #ccc;
+  font: 12px/1.7 var(--bangla);
+}
+
+.feature-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 22px;
+}
+
+.feature-small { min-height: 210px; }
+
+.feature-small .feature-caption {
+  bottom: 18px;
+  left: 20px;
+}
+
+.feature-small h3 {
+  margin-top: 8px;
+  font: 700 25px/1 var(--display);
+  text-transform: uppercase;
+}
+
+/* LATEST POSTS */
+
+.latest { background: var(--surface); }
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.post-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  transition: transform .25s, border-color .25s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,89,61,.5);
+}
+
+.post-image {
+  position: relative;
+  aspect-ratio: 1.55;
+  overflow: hidden;
+  background: #25272c;
+}
+
+.post-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.post-card:hover .post-image img { transform: scale(1.05); }
+
+.post-body { padding: 19px; }
+
+.post-meta {
+  display: flex;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.post-meta span:first-child { color: var(--accent); }
+
+.post-body h3 {
+  margin: 12px 0 8px;
+  font: 700 25px/1 var(--display);
+  text-transform: uppercase;
+}
+
+.post-body p {
+  color: var(--muted);
+  font: 12px/1.8 var(--bangla);
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: #aaa;
+  font-size: 10px;
+}
+
+.post-author img {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* COMMUNITY INTRO */
+
+.community {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.community-art {
+  min-height: 460px;
+  position: relative;
+  background:
+    linear-gradient(0deg, rgba(0,0,0,.45), transparent),
+    url("https://images.unsplash.com/photo-1511512578047-dfb367046420?q=85&w=1100&auto=format&fit=crop")
+    center / cover;
+}
+
+.art-label {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  padding: 9px 14px;
+  background: rgba(16,17,20,.85);
+  font: 800 18px var(--display);
+  letter-spacing: 1px;
+}
+
+.community-copy h2 {
+  margin: 13px 0 20px;
+  font: 900 clamp(45px, 5.5vw, 72px)/.87 var(--display);
+  text-transform: uppercase;
+}
+
+.community-copy h2 span { color: var(--accent); }
+
+.community-copy > p {
+  color: var(--muted);
+  font: 14px/1.9 var(--bangla);
+}
+
+.community-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.point {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.point strong {
+  display: block;
+  font: 700 20px var(--display);
+}
+
+.point span {
+  color: var(--muted);
+  font: 11px var(--bangla);
+}
+
+/* MODERATORS */
+
+.moderators { background: var(--surface); }
+
+.moderator-list { border-top: 1px solid var(--line); }
+
+.moderator {
+  display: grid;
+  grid-template-columns: 58px 1fr auto auto;
+  align-items: center;
+  gap: 18px;
+  padding: 19px 5px;
+  border-bottom: 1px solid var(--line);
+  transition: background .2s;
+}
+
+.moderator:hover { background: rgba(255,255,255,.02); }
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mod-name {
+  font: 700 23px var(--display);
+  text-transform: uppercase;
+}
+
+.mod-role {
+  color: var(--muted);
+  font: 11px var(--bangla);
+}
+
+.mod-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ddd;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 9px rgba(157,226,108,.4);
+}
+
+.mod-count {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* JOIN */
+
+.join {
+  padding: 100px 0;
+  text-align: center;
+  background:
+    linear-gradient(rgba(16,17,20,.88), rgba(16,17,20,.94)),
+    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?q=85&w=1800&auto=format&fit=crop")
+    center / cover;
+}
+
+.join h2 {
+  margin-top: 12px;
+  font: 900 clamp(52px, 8vw, 92px)/.88 var(--display);
+  text-transform: uppercase;
+}
+
+.join h2 span { color: var(--accent); }
+
+.join p {
+  max-width: 470px;
+  margin: 20px auto 27px;
+  color: #bbb;
+  font: 13px/1.9 var(--bangla);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 38px 0;
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-note {
+  max-width: 470px;
+  margin-top: 12px;
+  color: var(--muted);
+  font: 11px/1.8 var(--bangla);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.footer-links a {
+  color: #bbb;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .menu-toggle { display: block; }
+
+  .feature-grid { grid-template-columns: 1fr; }
+
+  .feature-main { min-height: 380px; }
+
+  .community { grid-template-columns: 1fr; gap: 35px; }
+
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .hero { min-height: 590px; }
+}
+
+@media (max-width: 580px) {
+  .container { width: calc(100% - 32px); }
+
+  .nav { height: 68px; }
+
+  .nav-links { top: 68px; }
+
+  .brand { font-size: 22px; }
+
+  .hero { min-height: 550px; }
+
+  .hero h1 { font-size: 68px; }
+
+  .hero-description { font-size: 13px; }
+
+  .hero-bottom { display: none; }
+
+  .section { padding: 65px 0; }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .safety {
+    grid-template-columns: 44px 1fr;
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .safety a { grid-column: 2; }
+
+  .feature-main { min-height: 320px; }
+
+  .feature-side { grid-template-columns: 1fr; }
+
+  .posts-grid { grid-template-columns: 1fr; }
+
+  .community-art { min-height: 320px; }
+
+  .moderator {
+    grid-template-columns: 44px 1fr auto;
+    gap: 10px;
+  }
+
+  .avatar { width: 42px; height: 42px; }
+
+  .mod-name { font-size: 19px; }
+
+  .mod-count { display: none; }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .join { padding: 70px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <span class="brand-mark">A</span>
+      AKM MASUM<span style="color:var(--accent)">.</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">হোম</a>
+      <a href="#featured">ফিচারড</a>
+      <a href="#latest">কমিউনিটি</a>
+      <a href="#moderators">মডারেটর</a>
+      <a href="#safety">নিরাপত্তা</a>
+      <a href="#join" class="nav-cta">যুক্ত হোন ↗</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="মেনু খুলুন"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      মেনু ☰
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-label">BANGLADESH GAMING COMMUNITY</div>
+
+      <h1>
+        BEYOND
+        <span>THE GAME.</span>
+      </h1>
+
+      <p class="hero-description">
+        শুধু গেম খেলা নয়, একসাথে শেখা, অভিজ্ঞতা ভাগ করে নেওয়া
+        এবং গেমিং কমিউনিটির অংশ হয়ে ওঠার একটি জায়গা।
+        স্বাগতম আমাদের গেমিং জগতে।
+      </p>
+
+      <div class="hero-actions">
+        <a href="#latest" class="btn btn-primary">
+          কমিউনিটি এক্সপ্লোর করুন ↗
+        </a>
+        <a href="#moderators" class="btn btn-outline">
+          আমাদের টিম
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero-bottom">
+    <span>GAMING · CREATIVITY · COMMUNITY</span>
+    <span>PLAY TOGETHER. GROW TOGETHER.</span>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section class="safety-wrap" id="safety">
+  <div class="container">
+    <div class="safety">
+      <div class="safety-icon">!</div>
+
+      <div>
+        <h3>গেমিং নিরাপত্তা সবার আগে</h3>
+        <p>
+          আপনার পাসওয়ার্ড বা OTP কারো সাথে শেয়ার করবেন না।
+          অপরিচিত লিংক এড়িয়ে চলুন এবং সন্দেহজনক কার্যকলাপ
+          আমাদের মডারেটরদের জানান।
+        </p>
+      </div>
+
+      <a href="#footer">নিরাপত্তা নির্দেশিকা ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="section featured" id="featured">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">EDITOR'S PICKS / 01</div>
+        <h2>Featured Stories</h2>
+      </div>
+
+      <p>
+        কমিউনিটির সেরা কনটেন্ট, গেমিং অভিজ্ঞতা,
+        গুরুত্বপূর্ণ আপডেট এবং বিশেষ আয়োজন।
+      </p>
+    </div>
+
+    <div class="feature-grid">
+
+      <a href="#latest" class="feature-main">
+        <img
+          src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=85&w=1200&auto=format&fit=crop"
+          alt="Gaming tournament event">
+
+        <div class="feature-caption">
+          <span class="tag">FEATURED STORY</span>
+          <h3>THE NEXT LEVEL OF GAMING</h3>
+          <p>গেমিং দক্ষতা বাড়াতে আমাদের বিশেষ গাইড ও অভিজ্ঞতা।</p>
+        </div>
+      </a>
+
+      <div class="feature-side">
+
+        <a href="#latest" class="feature-small">
+          <img
+            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=85&w=900&auto=format&fit=crop"
+            alt="Gaming setup">
+
+          <div class="feature-caption">
+            <span class="eyebrow">GAMING GUIDE</span>
+            <h3>Improve Your Skills</h3>
+          </div>
+        </a>
+
+        <a href="#latest" class="feature-small">
+          <img
+            src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=85&w=900&auto=format&fit=crop"
+            alt="Gaming technology">
+
+          <div class="feature-caption">
+            <span class="eyebrow">COMMUNITY UPDATE</span>
+            <h3>What's Happening?</h3>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST POSTS -->
+<section class="section latest" id="latest">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">FROM THE COMMUNITY / 02</div>
+        <h2>Latest Stories</h2>
+      </div>
+
+      <a href="#latest" class="text-link">সব পোস্ট দেখুন ↗</a>
+    </div>
+
+    <div class="posts-grid">
+
+      <article class="post-card">
+        <a href="#latest" class="post-image">
+          <img
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=85&w=900&auto=format&fit=crop"
+            alt="Competitive gaming">
+        </a>
+
+        <div class="post-body">
+          <div class="post-meta">
+            <span>GAMEPLAY</span>
+            <span>•</span>
+            <span>৫ মিনিট পড়ুন</span>
+          </div>
+
+          <h3>Improve Your Gameplay</h3>
+
+          <p>
+            গেমে নিজের দক্ষতা বাড়ানোর জন্য কিছু কার্যকর
+            কৌশল ও অভিজ্ঞতা জেনে নিন।
+          </p>
+
+          <div class="post-author">
+            <img src="https://i.pravatar.cc/80?img=12" alt="">
+            <span>মডারেটর টিম · ২ দিন আগে</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <a href="#latest" class="post-image">
+          <img
+            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=85&w=900&auto=format&fit=crop"
+            alt="Gaming tips">
+        </a>
+
+        <div class="post-body">
+          <div class="post-meta">
+            <span>GUIDE</span>
+            <span>•</span>
+            <span>৪ মিনিট পড়ুন</span>
+          </div>
+
+          <h3>Essential Gaming Tips</h3>
+
+          <p>
+            নতুন ও পুরোনো গেমারদের জন্য প্রয়োজনীয়
+            কিছু টিপস এবং গাইড।
+          </p>
+
+          <div class="post-author">
+            <img src="https://i.pravatar.cc/80?img=33" alt="">
+            <span>মডারেটর টিম · ৩ দিন আগে</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <a href="#latest" class="post-image">
+          <img
+            src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=85&w=900&auto=format&fit=crop"
+            alt="Gaming community">
+        </a>
+
+        <div class="post-body">
+          <div class="post-meta">
+            <span>ANNOUNCEMENT</span>
+            <span>•</span>
+            <span>৩ মিনিট পড়ুন</span>
+          </div>
+
+          <h3>Welcome To Our Community</h3>
+
+          <p>
+            আমাদের কমিউনিটির নতুন আয়োজন এবং
+            গুরুত্বপূর্ণ আপডেট সম্পর্কে জানুন।
+          </p>
+
+          <div class="post-author">
+            <img src="https://i.pravatar.cc/80?img=52" alt="">
+            <span>অ্যাডমিন · ৫ দিন আগে</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT COMMUNITY -->
+<section class="section">
+  <div class="container community">
+
+    <div class="community-art">
+      <div class="art-label">ONE COMMUNITY. MANY STORIES.</div>
+    </div>
+
+    <div class="community-copy">
+      <div class="eyebrow">OUR COMMUNITY / 03</div>
+
+      <h2>
+        MORE THAN
+        <span>JUST GAMING.</span>
+      </h2>
+
+      <p>
+        আমরা বিশ্বাস করি গেমিং শুধু একটি বিনোদন নয়।
+        এটি শেখা, সৃজনশীলতা, বন্ধুত্ব এবং অভিজ্ঞতা
+        ভাগ করে নেওয়ার একটি মাধ্যম।
+        আমাদের কমিউনিটিতে গেমাররা একসাথে যুক্ত হতে,
+        নতুন কিছু জানতে এবং নিজেদের অভিজ্ঞতা শেয়ার করতে পারবেন।
+      </p>
+
+      <div class="community-points">
+        <div class="point">
+          <strong>GAMEPLAY</strong>
+          <span>গেমিং অভিজ্ঞতা ও হাইলাইটস</span>
+        </div>
+
+        <div class="point">
+          <strong>GUIDES</strong>
+          <span>টিপস, কৌশল ও টিউটোরিয়াল</span>
+        </div>
+
+        <div class="point">
+          <strong>COMMUNITY</strong>
+          <span>গেমারদের গল্প ও আপডেট</span>
+        </div>
+
+        <div class="point">
+          <strong>SAFETY</strong>
+          <span>নিরাপদ গেমিং সচেতনতা</span>
+        </div>
+      </div>
+
+      <a href="#join" class="btn btn-primary">
+        আমাদের সাথে যুক্ত হোন ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODERATORS -->
+<section class="section moderators" id="moderators">
+  <div class="container">
+
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">THE PEOPLE BEHIND / 04</div>
+        <h2>Meet Our Team</h2>
+      </div>
+
+      <a href="#moderators" class="text-link">সকল মডারেটর ↗</a>
+    </div>
+
+    <div class="moderator-list">
+
+      <a href="#moderators" class="moderator">
+        <img class="avatar"
+          src="https://i.pravatar.cc/120?img=12"
+          alt="Moderator">
+
+        <div>
+          <div class="mod-name">TANVIR HOSSAIN</div>
+          <div class="mod-role">হেড মডারেটর</div>
+        </div>
+
+        <div class="mod-status">
+          <span class="dot"></span>
+          অনলাইন
+        </div>
+
+        <div class="mod-count">২৪টি পোস্ট</div>
+      </a>
+
+      <a href="#moderators" class="moderator">
+        <img class="avatar"
+          src="https://i.pravatar.cc/120?img=33"
+          alt="Moderator">
+
+        <div>
+          <div class="mod-name">RASEL AHMED</div>
+          <div class="mod-role">সিনিয়র মডারেটর</div>
+        </div>
+
+        <div class="mod-status">
+          <span class="dot" style="background:#888;box-shadow:none"></span>
+          অফলাইন
+        </div>
+
+        <div class="mod-count">১৮টি পোস্ট</div>
+      </a>
+
+      <a href="#moderators" class="moderator">
+        <img class="avatar"
+          src="https://i.pravatar.cc/120?img=52"
+          alt="Moderator">
+
+        <div>
+          <div class="mod-name">NAZMUL ISLAM</div>
+          <div class="mod-role">কমিউনিটি মডারেটর</div>
+        </div>
+
+        <div class="mod-status">
+          <span class="dot"></span>
+          অনলাইন
+        </div>
+
+        <div class="mod-count">১২টি পোস্ট</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOIN COMMUNITY -->
+<section class="join" id="join">
+  <div class="container">
+    <div class="eyebrow">BE PART OF SOMETHING BIGGER</div>
+
+    <h2>
+      FIND YOUR
+      <span>COMMUNITY.</span>
+    </h2>
+
+    <p>
+      নতুন কিছু শিখুন, নিজের অভিজ্ঞতা শেয়ার করুন
+      এবং আমাদের গেমিং কমিউনিটির সাথে যুক্ত থাকুন।
+    </p>
+
+    <a href="#" class="btn btn-primary">
+      JOIN OUR COMMUNITY ↗
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container footer-inner">
+
+    <div>
+      <a href="#home" class="brand">
+        <span class="brand-mark">A</span>
+        AKM MASUM<span style="color:var(--accent)">.</span>
+      </a>
+
+      <p class="footer-note">
+        AKM MASUM একটি স্বাধীন গেমিং কমিউনিটি প্ল্যাটফর্ম।
+        এটি Garena বা Free Fire-এর সাথে আনুষ্ঠানিকভাবে
+        সম্পৃক্ত নয়। সকল গেম ও ব্র্যান্ড তাদের নিজ নিজ
+        মালিকের সম্পত্তি।
+      </p>
+
+      <p class="footer-note">
+        © <span id="year"></span> AKM MASUM. All rights reserved.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">হোম</a>
+      <a href="#latest">কমিউনিটি</a>
+      <a href="#moderators">মডারেটর</a>
+      <a href="#safety">নিরাপত্তা</a>
+      <a href="#join">যোগাযোগ</a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "মেনু বন্ধ করুন" : "মেনু খুলুন"
+  );
+  menuToggle.textContent = isOpen ? "বন্ধ করুন ✕" : "মেনু ☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "মেনু ☰";
+  });
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "মেনু ☰";
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
